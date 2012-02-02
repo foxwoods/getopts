@@ -33,7 +33,8 @@
 		$substr = create_function(
 			'$string,$start,$length=NULL', // is not used, only for definition
 
-			'$ret = call_user_func_array(\'substr\', func_get_args());'.
+			'$args = func_get_args();'.
+			'$ret = call_user_func_array(\'substr\', $args);'.
 			'if($ret === false){'.
 			'	return \'\';'.
 			'}else{'.
